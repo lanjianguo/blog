@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="深入理解浏览器缓存机制 为什么要有缓存机制  浏览器缓存是将文件保存在客户端，好的缓存策略可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。对于经常用浏览器来浏览信息的用户来说并不十分陌生。用户也许在用浏览器浏览信息时，经常使用”返回”和”后退”的浏览功能，调用你以前阅读过的页面，这时，你会发现显示速度是很快的，其实这些你刚调出来的内容就放在计算机的缓存中，而不需">
+<meta name="description" content="为什么要有缓存机制  浏览器缓存是将文件保存在客户端，好的缓存策略可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。对于经常用浏览器来浏览信息的用户来说并不十分陌生。用户也许在用浏览器浏览信息时，经常使用”返回”和”后退”的浏览功能，调用你以前阅读过的页面，这时，你会发现显示速度是很快的，其实这些你刚调出来的内容就放在计算机的缓存中，而不需要再次从Interne">
 <meta name="keywords" content="浏览器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解浏览器缓存机制">
 <meta property="og:url" content="https://lan521224.github.io/blog/2018/09/28/深入理解浏览器缓存机制/index.html">
 <meta property="og:site_name" content="LanJianGuo">
-<meta property="og:description" content="深入理解浏览器缓存机制 为什么要有缓存机制  浏览器缓存是将文件保存在客户端，好的缓存策略可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。对于经常用浏览器来浏览信息的用户来说并不十分陌生。用户也许在用浏览器浏览信息时，经常使用”返回”和”后退”的浏览功能，调用你以前阅读过的页面，这时，你会发现显示速度是很快的，其实这些你刚调出来的内容就放在计算机的缓存中，而不需">
+<meta property="og:description" content="为什么要有缓存机制  浏览器缓存是将文件保存在客户端，好的缓存策略可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。对于经常用浏览器来浏览信息的用户来说并不十分陌生。用户也许在用浏览器浏览信息时，经常使用”返回”和”后退”的浏览功能，调用你以前阅读过的页面，这时，你会发现显示速度是很快的，其实这些你刚调出来的内容就放在计算机的缓存中，而不需要再次从Interne">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/ed48413a49fa3b23793c96603243e70987c1421e">
 <meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/57cb5a70644dae700e14e265c66bdf742919dd49">
@@ -104,10 +104,10 @@
 <meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/9f70c0d7021ae2e9cd5991bc3cb5cdc4ba39e7c5">
 <meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/8dc9638de8420afdf6c813ffb4f4011f6ce13fa0">
 <meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/d85b209349e41b8261906d88f320a96f3a7fe47f">
-<meta property="og:updated_time" content="2018-09-28T07:00:06.069Z">
+<meta property="og:updated_time" content="2018-09-28T08:03:24.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解浏览器缓存机制">
-<meta name="twitter:description" content="深入理解浏览器缓存机制 为什么要有缓存机制  浏览器缓存是将文件保存在客户端，好的缓存策略可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。对于经常用浏览器来浏览信息的用户来说并不十分陌生。用户也许在用浏览器浏览信息时，经常使用”返回”和”后退”的浏览功能，调用你以前阅读过的页面，这时，你会发现显示速度是很快的，其实这些你刚调出来的内容就放在计算机的缓存中，而不需">
+<meta name="twitter:description" content="为什么要有缓存机制  浏览器缓存是将文件保存在客户端，好的缓存策略可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。对于经常用浏览器来浏览信息的用户来说并不十分陌生。用户也许在用浏览器浏览信息时，经常使用”返回”和”后退”的浏览功能，调用你以前阅读过的页面，这时，你会发现显示速度是很快的，其实这些你刚调出来的内容就放在计算机的缓存中，而不需要再次从Interne">
 <meta name="twitter:image" content="http://agroup-bos.cdn.bcebos.com/ed48413a49fa3b23793c96603243e70987c1421e">
 
 
@@ -116,7 +116,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/blog/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -370,7 +370,7 @@
       
 
       
-        <h1 id="深入理解浏览器缓存机制"><a href="#深入理解浏览器缓存机制" class="headerlink" title="深入理解浏览器缓存机制"></a>深入理解浏览器缓存机制</h1><blockquote>
+        <blockquote>
 <p><strong>为什么要有缓存机制</strong></p>
 </blockquote>
 <p>浏览器缓存是将文件保存在客户端，好的缓存策略可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。对于经常用浏览器来浏览信息的用户来说并不十分陌生。用户也许在用浏览器浏览信息时，经常使用”返回”和”后退”的浏览功能，调用你以前阅读过的页面，这时，你会发现显示速度是很快的，其实这些你刚调出来的内容就放在计算机的缓存中，而不需要再次从Internet上重新传输数据，这样就会给用户造成了一种访问速度被提高的错觉。<br>缓存一直是前端优化的主战场, 利用好缓存就成功了一半. 本文从缓存类型，缓存过程等方面，带你深入理解浏览器等缓存机制。</p>
@@ -618,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解浏览器缓存机制"><span class="nav-number">1.</span> <span class="nav-text">深入理解浏览器缓存机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#强缓存"><span class="nav-number">1.1.</span> <span class="nav-text">强缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#public：所有内容都将被缓存，客户端和代理服务器都可缓存"><span class="nav-number">1.1.0.0.1.</span> <span class="nav-text">public：所有内容都将被缓存，客户端和代理服务器都可缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#private：所有内容只有客户端可以缓存，Cache-Control的默认取值"><span class="nav-number">1.1.0.0.2.</span> <span class="nav-text">private：所有内容只有客户端可以缓存，Cache-Control的默认取值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#no-cache：客户端缓存内容，但是是否使用缓存则需要经过协商缓存来验证决定"><span class="nav-number">1.1.0.0.3.</span> <span class="nav-text">no-cache：客户端缓存内容，但是是否使用缓存则需要经过协商缓存来验证决定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#no-store：所有内容都不会被缓存，即不使用强制缓存，也不使用协商缓存"><span class="nav-number">1.1.0.0.4.</span> <span class="nav-text">no-store：所有内容都不会被缓存，即不使用强制缓存，也不使用协商缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#max-age-xxx-xxx-is-numeric-：缓存内容将在xxx秒后失效"><span class="nav-number">1.1.0.0.5.</span> <span class="nav-text">max-age=xxx (xxx is numeric)：缓存内容将在xxx秒后失效</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内存缓存-from-memory-cache-：内存缓存具有两个特点，分别是快速读取和时效性："><span class="nav-number">1.1.0.0.6.</span> <span class="nav-text">内存缓存(from memory cache)：内存缓存具有两个特点，分别是快速读取和时效性：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#快速读取：内存缓存会将编译解析后的文件，直接存入该进程的内存中，占据该进程一定的内存资源，以方便下次运行使用时的快速读取。"><span class="nav-number">1.1.0.0.6.1.</span> <span class="nav-text">快速读取：内存缓存会将编译解析后的文件，直接存入该进程的内存中，占据该进程一定的内存资源，以方便下次运行使用时的快速读取。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#时效性：一旦该进程关闭，则该进程的内存则会清空。"><span class="nav-number">1.1.0.0.6.2.</span> <span class="nav-text">时效性：一旦该进程关闭，则该进程的内存则会清空。</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#硬盘缓存-from-disk-cache-：硬盘缓存则是直接将缓存写入硬盘文件中，读取缓存需要对该缓存存放的硬盘文件进行I-O操作，然后重新解析该缓存内容，读取复杂，速度比内存缓存慢。"><span class="nav-number">1.1.0.0.7.</span> <span class="nav-text">硬盘缓存(from disk cache)：硬盘缓存则是直接将缓存写入硬盘文件中，读取缓存需要对该缓存存放的硬盘文件进行I/O操作，然后重新解析该缓存内容，读取复杂，速度比内存缓存慢。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协商缓存"><span class="nav-number">1.2.</span> <span class="nav-text">协商缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#转自-彻底理解浏览器的缓存机制"><span class="nav-number">1.2.0.0.0.1.</span> <span class="nav-text">转自 彻底理解浏览器的缓存机制</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#强缓存"><span class="nav-number">1.</span> <span class="nav-text">强缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#public：所有内容都将被缓存，客户端和代理服务器都可缓存"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">public：所有内容都将被缓存，客户端和代理服务器都可缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#private：所有内容只有客户端可以缓存，Cache-Control的默认取值"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">private：所有内容只有客户端可以缓存，Cache-Control的默认取值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#no-cache：客户端缓存内容，但是是否使用缓存则需要经过协商缓存来验证决定"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">no-cache：客户端缓存内容，但是是否使用缓存则需要经过协商缓存来验证决定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#no-store：所有内容都不会被缓存，即不使用强制缓存，也不使用协商缓存"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">no-store：所有内容都不会被缓存，即不使用强制缓存，也不使用协商缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#max-age-xxx-xxx-is-numeric-：缓存内容将在xxx秒后失效"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">max-age=xxx (xxx is numeric)：缓存内容将在xxx秒后失效</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内存缓存-from-memory-cache-：内存缓存具有两个特点，分别是快速读取和时效性："><span class="nav-number">1.0.0.6.</span> <span class="nav-text">内存缓存(from memory cache)：内存缓存具有两个特点，分别是快速读取和时效性：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#快速读取：内存缓存会将编译解析后的文件，直接存入该进程的内存中，占据该进程一定的内存资源，以方便下次运行使用时的快速读取。"><span class="nav-number">1.0.0.6.1.</span> <span class="nav-text">快速读取：内存缓存会将编译解析后的文件，直接存入该进程的内存中，占据该进程一定的内存资源，以方便下次运行使用时的快速读取。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#时效性：一旦该进程关闭，则该进程的内存则会清空。"><span class="nav-number">1.0.0.6.2.</span> <span class="nav-text">时效性：一旦该进程关闭，则该进程的内存则会清空。</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#硬盘缓存-from-disk-cache-：硬盘缓存则是直接将缓存写入硬盘文件中，读取缓存需要对该缓存存放的硬盘文件进行I-O操作，然后重新解析该缓存内容，读取复杂，速度比内存缓存慢。"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">硬盘缓存(from disk cache)：硬盘缓存则是直接将缓存写入硬盘文件中，读取缓存需要对该缓存存放的硬盘文件进行I/O操作，然后重新解析该缓存内容，读取复杂，速度比内存缓存慢。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协商缓存"><span class="nav-number">2.</span> <span class="nav-text">协商缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#转自-彻底理解浏览器的缓存机制"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">转自 彻底理解浏览器的缓存机制</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -760,6 +760,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
