@@ -1607,8 +1607,7 @@ pre .javascript .function {
   left: auto;
 }
 .posts-expand .post-eof {
-  display: block;
-  margin: 80px auto 60px;
+  display: none;
   width: 8%;
   height: 1px;
   background: #ccc;
