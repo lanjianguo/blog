@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="css3绘制百度度熊 前几天看到一篇文章是写用css3绘制腾讯企鹅的。趁着今天有空，就用css3来写一个百度的小度熊。话不多说，开始上码。">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css 绘制百度度熊">
+<meta property="og:url" content="https://lan521224.github.io/blog/2018/10/27/css-绘制百度度熊/index.html">
+<meta property="og:site_name" content="LanJianGuo">
+<meta property="og:description" content="css3绘制百度度熊 前几天看到一篇文章是写用css3绘制腾讯企鹅的。趁着今天有空，就用css3来写一个百度的小度熊。话不多说，开始上码。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/edfba89d0d34b5e3534eacdbae0f1ca933940c30">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/66db591c3c8eea13421b90eb7454a2f9bd333a50">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/95c7cdeb00015f17acab74424f18cd57997aa1e9">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/c51b9713640a14ea78c9d5dcdf01883a37e61c7a">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/69bdbc85c36a60071a5523089b16b0c5dbfd9eda">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/08f32a10bfe7963d533cab246bd0a939ac32662a">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/5adbd21b0e0c95ae6fa0be685d5ec087c42c2c14">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/3a3ee27b940fa4c29484c9462c3ec14cdeefa2cb">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/0a8ac73907e01f2bf42c7fdd4690ae510487fe8f">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/fc9981f9b4debf05e928869cfd108bb624b2386f">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/ee14924bbde3ccff026b54344f0be4e17b7a3a69">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/7baa68b4fe9907553da2c31d495c143d75d7de02">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/045e05acc1c57154bd5b36bb0339066ba55acb1e">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/2ed22e8b599d4e192d9fa4997ad3aa468bcd1922">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/505633707ce7875264b2c7a91848bcc2a60ab86e">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/de1fdd402377b316a73ee8ab4f7444649592b590">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/79baa680ff65ca91757986e5ada6bc917f725715">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/c76fe43b598acd22f55ddd21089a91c19dc0aec1">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/cad77b4fdb0c6f9c45e19e9c6a8dd8b32da78ced">
+<meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/60878bedb3828470a9c76efa094664c8c2d7c459">
+<meta property="og:updated_time" content="2018-10-27T06:52:33.233Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css 绘制百度度熊">
+<meta name="twitter:description" content="css3绘制百度度熊 前几天看到一篇文章是写用css3绘制腾讯企鹅的。趁着今天有空，就用css3来写一个百度的小度熊。话不多说，开始上码。">
+<meta name="twitter:image" content="http://agroup-bos.cdn.bcebos.com/edfba89d0d34b5e3534eacdbae0f1ca933940c30">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lan521224.github.io/blog/2018/10/27/css-绘制百度度熊/"/>
+
+
+
+
+
+  <title>css 绘制百度度熊 | LanJianGuo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Lan521224/blog"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LanJianGuo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lan521224.github.io/blog/blog/2018/10/27/css-绘制百度度熊/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LanJianGuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LanJianGuo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css 绘制百度度熊</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-27T14:49:34+08:00">
+                2018-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="css3绘制百度度熊"><a href="#css3绘制百度度熊" class="headerlink" title="css3绘制百度度熊"></a>css3绘制百度度熊</h1><blockquote>
+<p>前几天看到一篇文章是写用css3绘制腾讯企鹅的。趁着今天有空，就用css3来写一个百度的小度熊。话不多说，开始上码。</p>
+</blockquote>
+<a id="more"></a>
+<p>先来一张呆萌小度熊的成果照。<br><img src="http://agroup-bos.cdn.bcebos.com/edfba89d0d34b5e3534eacdbae0f1ca933940c30" alt="图片"></p>
+<p>在绘制小度熊之前，首先要对小度熊布局上进行一个分解，便于我们组织代码结构。<br>从整体结构上主要分成耳朵，头部和身体。我们统一对将胳膊，肚子和腿都放到了身体的部分里。</p>
+<pre><code>&lt;!-- 页面框架 --&gt;
+&lt;!Doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no&quot;/&gt;
+    &lt;title&gt;纯css度熊&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./bear.css&quot;/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 背景 --&gt;
+    &lt;div class=&quot;bac&quot;&gt;
+        &lt;!-- 头部 --&gt;
+            &lt;!-- 耳朵 --&gt;
+            &lt;div class=&quot;earLeft&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;earRight&quot;&gt;&lt;/div&gt;
+            &lt;!-- 脸 --&gt;
+            &lt;div class=&quot;head&quot;&gt;&lt;/div&gt;
+        &lt;!-- 身体 --&gt;
+        &lt;div class=&quot;body&quot;&gt;
+            &lt;!-- 胳膊 --&gt;
+            &lt;div class=&quot;armLeft&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;armRight&quot;&gt;&lt;/div&gt;
+            &lt;!-- 肚子 --&gt;
+            &lt;div class=&quot;tummy&quot;&gt;&lt;/div&gt;
+            &lt;!-- 腿 --&gt;
+            &lt;div class=&quot;legLeft&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;legRight&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- 阴影 --&gt;
+        &lt;div class=&quot;shaodw&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p></p>
+<p>结构调整好之后，我们先把背景容器的位置和大小设置一下。在开发的时候，可以先给背景设置一个深色背景，便于我们看各部分的位置，最后的时候注释掉就可以了。</p>
+<pre><code>/*背景容器*/
+.bac {
+    width: 345px;
+    height: 500px;
+    top: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: #333333; */
+ }
+</code></pre><h4 id="头部"><a href="#头部" class="headerlink" title="头部"></a>头部</h4><p>然后我们就可以在容器中，放置各个部分了，我是按从上到下的顺序写的，所以最开始放置的是头部。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/66db591c3c8eea13421b90eb7454a2f9bd333a50" alt="图片"></p>
+<pre><code>/*头部*/
+.bac .head {
+    width: 346px;
+    height: 288px;
+    /* background-color: #e1b79b; */
+    border: 3px solid #a57662;
+    border-radius: 50% 50% 50% 50% / 70% 60% 40% 40%;
+    position: relative;
+    z-index: 88;
+  }
+</code></pre><p>知识点来了，怎么样可以画出这种不规则的形状呢？绘制这种带有弧线的形状，可以使用border-radius属性，具体使用方法这里不深入讨论，简单来说通过设置元素的border-radius值，可以轻松给元素设置圆角边框，甚至实现绘制圆、半圆、四分之一的圆等各种圆角图形。因为我没有准确的尺寸图，所以就用百分比来实现了。</p>
+<p>“/”前的四个数值表示圆角的水平半径，后面四个值表示圆角的垂直半径。这个方法我们在后面还会很频繁的使用到。</p>
+<h4 id="耳朵"><a href="#耳朵" class="headerlink" title="耳朵"></a>耳朵</h4><p>绘制完头部轮廓之后，我们可以把耳朵的轮廓也加上，本来计划是将耳朵写在头部<div>内部的，但是因为要考虑层级压盖的情况，还是把耳朵要素单独的放在了外面。这里有一个关键属性就是transform: rotate(Xdeg)用来对要素做旋转，我们可以将耳朵旋转成对应的角度。</div></p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/95c7cdeb00015f17acab74424f18cd57997aa1e9" alt="图片"></p>
+<pre><code>/*左耳朵*/
+.earLeft {
+    height: 50px;
+    width: 70px;
+    /* background-color: #e1b79b; */
+    border-radius: 200px 200px 100px 100px;
+    border: 3px solid #a57662;
+    transform: rotate(-49deg);
+    position: absolute;
+    top: 10px;
+    left: 12px;
+}
+
+/*右耳朵*/
+.earRight {
+    height: 50px;
+    width: 70px;
+    /* background-color: #e1b79b; */
+    border-radius: 200px 200px 100px 100px;
+    border: 3px solid #a57662;
+    transform: rotate(40deg);
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+</code></pre><h4 id="眼睛"><a href="#眼睛" class="headerlink" title="眼睛"></a>眼睛</h4><p>接下来就开始填充绘制头部里面的内容，头部里面主要是眼睛，鼻子和嘴巴，我们先来画眼睛，为了看的清楚，我们就把头部填充上颜色了。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/c51b9713640a14ea78c9d5dcdf01883a37e61c7a" alt="图片"></p>
+<pre><code>/*左眼白*/
+.head .eyeLeft {
+    height: 78px;
+    width: 67px;
+    background-color: #ffffff;
+    border-radius: 50% / 50%;
+    transform: rotate(20deg);
+    position: absolute;
+    top: 113px;
+    left: 68px;
+ }
+
+ /*左眼珠*/
+ .head .eyeConLeft {
+    width: 28px;
+    height: 33px;
+    background-color: #511313;
+    position: absolute;
+    border-radius: 50%/50%;
+    transform: rotate(-13deg);
+    top: 20px;
+    right: 15px;
+ }
+
+ /*右眼白*/
+ .head .eyeRight {
+    height: 78px;
+    width: 67px;
+    background-color: #ffffff;
+    border-radius: 50% / 50%;
+    transform: rotate(-20deg);
+    position: absolute;
+    top: 113px;
+    right: 68px;
+ }
+
+ /*右眼珠*/
+ .head .eyeConRight {
+    width: 28px;
+    height: 33px;
+    background-color: #511313;
+    position: absolute;
+    border-radius: 50%/50%;
+    transform: rotate(13deg);
+    top: 20px;
+    left: 15px;
+}
+</code></pre><h4 id="嘴巴"><a href="#嘴巴" class="headerlink" title="嘴巴"></a>嘴巴</h4><p>绘制了眼睛之后，我们来绘制嘴巴，嘴巴没有太特殊的地方，我们用正常椭圆就可以。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/69bdbc85c36a60071a5523089b16b0c5dbfd9eda" alt="图片"></p>
+<pre><code>/*嘴巴*/
+.head .mouse {
+    width: 99px;
+    height: 76px;
+    background-color: #f7f9e5;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    border-radius: 50% / 50%;
+    top: 187px;
+ }
+</code></pre><h4 id="鼻子"><a href="#鼻子" class="headerlink" title="鼻子"></a>鼻子</h4><p>虽然嘴巴就是一个普通的椭圆，但是鼻子比较特殊，鼻子我们可以看作是一个半椭圆+三角形组成。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/08f32a10bfe7963d533cab246bd0a939ac32662a" alt="图片"></p>
+<p>知识点又来了，怎么样用css画半椭圆和三角形呢？</p>
+<p>我们可以利用 border-radius: 50%/100% 100% 0 0; 来实现半椭圆的绘制。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/5adbd21b0e0c95ae6fa0be685d5ec087c42c2c14" alt="图片"></p>
+<p>我们利用将width和height设置为0，通过border属性来实现三角形的绘制。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/3a3ee27b940fa4c29484c9462c3ec14cdeefa2cb" alt="图片"></p>
+<p>我为了操作方便，在给鼻子设置来一个容器，使其居中，便于调整。</p>
+<pre><code>/*鼻子容器*/
+.head .nose {
+    width: 18px;
+    height: 14px;
+    position: absolute;
+    left: 50%;
+    margin-left: -9px;
+    top: 13px;
+}
+
+/* 鼻子上部分-半椭圆*/
+.nose .noseTop {
+    width: 18px;
+    height: 8px;
+    background-color: #511313;
+    border-radius: 50%/100% 100% 0 0;
+ }
+
+ /* 鼻子下部分-三角形*/
+ .nose .noseBottom {
+    width: 0;
+    height: 0;
+    border-width: 9px 9px 0;
+    border-style: solid;
+    border-color: #511313 transparent transparent;
+    position: relative;
+ }
+</code></pre><h4 id="耳朵内部"><a href="#耳朵内部" class="headerlink" title="耳朵内部"></a>耳朵内部</h4><p>终于完成了头部的操作，结果发现耳朵少了点什么，原来耳朵少了内部的要素，我们就分别给耳朵内部加点东西。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/0a8ac73907e01f2bf42c7fdd4690ae510487fe8f" alt="图片"></p>
+<pre><code>/* 左耳朵内部*/
+.earLeft .earCon {
+    width: 40px;
+    height: 60px;
+    background-color: #eed8c5;
+    border-radius: 50%/ 40% 40% 30% 30%;
+    margin-left: 17px;
+    margin-top: 15px;
+    transform: rotate(-3deg);
+ }
+
+ /*右耳朵内部*/
+ .earRight .earCon {
+    width: 40px;
+    height: 60px;
+    background-color: #eed8c5;
+    border-radius: 50%/ 40% 40% 30% 30%;
+    margin-left: 17px;
+    margin-top: 15px;
+    transform: rotate(-3deg);
+ }
+</code></pre><h4 id="辅助要素"><a href="#辅助要素" class="headerlink" title="辅助要素"></a>辅助要素</h4><p>小度熊的头部绘制完了，但是耳朵的地方还不够完美，因为头部的轮廓线把耳朵遮住了，我们想让头部和耳朵连在一起，这就用到了我们的辅助要素。我们可以把辅助要素设置成和头部一样的颜色，将头部与耳朵间的轮廓线盖住，这样就看起来好多了。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/fc9981f9b4debf05e928869cfd108bb624b2386f" alt="图片"></p>
+<pre><code>/*左侧辅助要素*/
+.head .arcLeft {
+    position: absolute;
+    top: 36px;
+    left: 23px;
+    width: 80px;
+    height: 30px;
+    background-color: #e1b79b;
+    border-radius: 50%/ 50%;
+    transform: rotate(-45deg);
+}
+
+/*右侧辅助要素*/
+.head .arcRight {
+    position: absolute;
+    top: 34px;
+    right: 16px;
+    width: 80px;
+    height: 30px;
+    background-color: #e1b79b;
+    border-radius: 50%/ 50%;
+    transform: rotate(43deg); 
+}
+</code></pre><h4 id="身体"><a href="#身体" class="headerlink" title="身体"></a>身体</h4><p>终于完成了头部的绘制，接下来就开始身体的绘制，同样需要先分析一下身体里包括那些部分，我们可以看到身体里主要包括胳膊，肚子和腿。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/ee14924bbde3ccff026b54344f0be4e17b7a3a69" alt="图片"></p>
+<p>我们为了看清楚各部分位置，可以先给身体容器加上背景颜色，最后再去掉。</p>
+<pre><code>/*度熊身体*/
+.body {
+    width: 208px;
+    height: 217px;
+    margin: -10px auto;
+    position: relative;
+}
+</code></pre><h4 id="胳膊"><a href="#胳膊" class="headerlink" title="胳膊"></a>胳膊</h4><p>我们先来添加小度熊的胳膊，最后位置可以再微调。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/7baa68b4fe9907553da2c31d495c143d75d7de02" alt="图片"></p>
+<pre><code>/*左侧胳膊*/
+.body .armLeft {
+    width: 53px;
+    height: 150px;
+    background-color: #e1b79b;
+    border: 2px solid #a57662;
+    border-radius: 50% 50%/60% 30%;
+    transform: rotate(10deg);
+    left: 6px;
+    position: absolute;
+}
+
+/*右侧胳膊*/
+.body .armRight {
+    width: 53px;
+    height: 150px;
+    background-color: #e1b79b;
+    border: 2px solid #a57662;
+    border-radius: 50% 50%/60% 30%;
+    transform: rotate(-14deg);
+    position: absolute;
+    right: 6px;
+}
+</code></pre><h4 id="肚子"><a href="#肚子" class="headerlink" title="肚子"></a>肚子</h4><p>绘制好胳膊我们就可以绘制小度熊，肉嘟嘟的肚子了。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/045e05acc1c57154bd5b36bb0339066ba55acb1e" alt="图片"></p>
+<p>知识点来了，这里绘制的肚子有一点想鸡蛋形，其实还是利用border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;这个属性来设置的，通过改变半径大小，实现这种鸡蛋形的图案绘制。</p>
+<p>之前说的可能漏了一句，我们的要素大部分是基于position: absolute来定位的，因为这个属性可以设置层级，便于我们图案的压盖。这里的肚子就要设置高一点的层级，压盖住之前绘制的胳膊图案。</p>
+<pre><code>/*肚子*/
+.body .tummy {
+    width: 144px;
+    height: 200px;
+    background-color: #e1b79b;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+    margin-top: -30px;
+    border: 2px solid #a57662;
+ }
+</code></pre><h4 id="肚子图案"><a href="#肚子图案" class="headerlink" title="肚子图案"></a>肚子图案</h4><p>在小度熊的肚子上还有一个小图案，我们直接添加覆盖上去就可以了。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/2ed22e8b599d4e192d9fa4997ad3aa468bcd1922" alt="图片"></p>
+<pre><code>/*肚子图案*/
+.body .tummyCon {
+    width: 83px;
+    height: 90px;
+    background-color: #f7f9e5;
+    -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+</code></pre><h4 id="腿"><a href="#腿" class="headerlink" title="腿"></a>腿</h4><p>绘制好肚子之后，我们来绘制腿，腿上面没有什么太多难点，就是注意边框和脚的弧度就行。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/505633707ce7875264b2c7a91848bcc2a60ab86e" alt="图片"></p>
+<pre><code>/*左腿*/
+.body .legLeft {
+    width: 53px;
+    height: 100px;
+    background-color: #e1b79b;
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    border: 2px solid #a57662;
+    border-color: transparent transparent #a57662 #a57662;
+    border-radius: 50% 50% 50% 50%/0 0 10% 50%;
+ }
+
+ /*右腿*/
+ .body .legRight {
+    width: 53px;
+    height: 100px;
+    background-color: #e1b79b;
+    position: absolute;
+    bottom: 0px;
+    right: 30px;
+    border: 2px solid #a57662;
+    border-color: transparent #a57662 #a57662 transparent;
+    border-radius: 50% 50% 50% 50%/0 0 50% 10%;
+ }
+</code></pre><h4 id="辅助要素-1"><a href="#辅助要素-1" class="headerlink" title="辅助要素"></a>辅助要素</h4><p>到这里我们基本的要素就绘制齐了，身体容器的背景颜色就可以去掉了，然后同样要绘制一些辅助元素，来让我们的小度熊看起来更好看。</p>
+<p>我们要给小度熊添加一个脖子，盖住身体的线条。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/de1fdd402377b316a73ee8ab4f7444649592b590" alt="图片"></p>
+<p>给肚子添加一个曲线，让肚子和腿更立体。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/79baa680ff65ca91757986e5ada6bc917f725715" alt="图片"></p>
+<p>最后就是要用辅助线条把脚展示出来。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/c76fe43b598acd22f55ddd21089a91c19dc0aec1" alt="图片"></p>
+<p>把这几个步骤完成，我们的小度熊整体就全部完成了。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/cad77b4fdb0c6f9c45e19e9c6a8dd8b32da78ced" alt="图片"></p>
+<pre><code>/*脖子遮盖*/
+.body .neck {
+    width: 120px;
+    height: 30px;
+    background-color: #e1b79b;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+ }
+
+ /*肚子辅助线*/
+ .body .arc {
+    border-bottom: 2px solid #511313;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100px;
+    height: 100px;
+    border: solid 2px #a57662;
+    border-color: transparent transparent #a57662 transparent;
+    border-radius: 50%/ 0 0 30% 30%;
+ }
+
+ /*左脚辅助线*/
+ .body .arcLeft {
+    border-bottom: 2px solid #511313;
+    position: absolute;
+    bottom: -30px;
+    left: 43px;
+    width: 35px;
+    height: 50px;
+    border: solid 2px #a57662;
+    border-color: #a57662 transparent transparent transparent;
+    border-radius: 50%/ 20% 20% 0 0;
+ }
+
+ /*右脚辅助线*/
+ .body .arcRight {
+    border-bottom: 2px solid #511313;
+    position: absolute;
+    bottom: -30px;
+    right: 43px;
+    width: 35px;
+    height: 50px;
+    border: solid 2px #a57662;
+    border-color: #a57662 transparent transparent transparent;
+    border-radius: 50%/ 20% 20% 0 0;
+ }
+</code></pre><h4 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h4><p>最后一步，给小度熊的脚底加一个阴影，我们就大功告成了。</p>
+<p><img src="http://agroup-bos.cdn.bcebos.com/60878bedb3828470a9c76efa094664c8c2d7c459" alt="图片"></p>
+<pre><code>/*阴影*/
+.shaodw {
+    width: 217px;
+    height: 39px;
+    background-color: #e9ecee;
+    margin: -20px auto;
+    border-radius: 50%/50%;
+}
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/09/28/深入理解浏览器缓存机制/" rel="next" title="深入理解浏览器缓存机制">
+                <i class="fa fa-chevron-left"></i> 深入理解浏览器缓存机制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LanJianGuo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/blog/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LanJianGuo</span>
+
+  
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <div class="powered-by"></div>
+
+
+
+  <span class="post-meta-divider"></span>
+
+
+
+  <div class="theme-info"></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
