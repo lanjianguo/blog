@@ -83,7 +83,7 @@
 <meta name="keywords" content="浏览器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解浏览器缓存机制">
-<meta property="og:url" content="https://lan521224.github.io/blog/2018/09/28/深入理解浏览器缓存机制/index.html">
+<meta property="og:url" content="https://lanjianguo.github.io/blog/2018/09/28/深入理解浏览器缓存机制/index.html">
 <meta property="og:site_name" content="LanJianGuo">
 <meta property="og:description" content="为什么要有缓存机制  浏览器缓存是将文件保存在客户端，好的缓存策略可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。对于经常用浏览器来浏览信息的用户来说并不十分陌生。用户也许在用浏览器浏览信息时，经常使用”返回”和”后退”的浏览功能，调用你以前阅读过的页面，这时，你会发现显示速度是很快的，其实这些你刚调出来的内容就放在计算机的缓存中，而不需要再次从Intern">
 <meta property="og:locale" content="zh-Hans">
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="https://lan521224.github.io/blog/2018/09/28/深入理解浏览器缓存机制/"/>
+  <link rel="canonical" href="https://lanjianguo.github.io/blog/2018/09/28/深入理解浏览器缓存机制/"/>
 
 
 
@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lan521224.github.io/blog/blog/2018/09/28/深入理解浏览器缓存机制/">
+    <link itemprop="mainEntityOfPage" href="https://lanjianguo.github.io/blog/blog/2018/09/28/深入理解浏览器缓存机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LanJianGuo">
@@ -422,14 +422,14 @@
 <p><img src="http://agroup-bos.cdn.bcebos.com/76e38e69ad8dfec9caf842d2805282b1e6da327f" alt="图片"></p>
 <p>状态码为灰色的请求则代表使用了强制缓存，请求对应的Size值则代表该缓存存放的位置，分别为from memory cache 和 from disk cache。</p>
 <p>from memory cache代表使用内存中的缓存，from disk cache则代表使用的是硬盘中的缓存，浏览器读取缓存的顺序为memory –&gt; disk。</p>
-<p>以我的博客为例进行分析：<br>访问<a href="https://lanjianguo.github.io/blog/–&gt;" target="_blank" rel="noopener">https://lanjianguo.github.io/blog/–&gt;</a> 200 –&gt; 关闭博客的标签页 –&gt; 重新打开<a href="https://lanjianguo.github.io/blog/" target="_blank" rel="noopener">https://lanjianguo.github.io/blog/</a> –&gt; 200(from disk cache) –&gt; 刷新 –&gt; 200(from memory cache)</p>
+<p>以我的博客为例进行分析：<br>访问<a href="https://lanjianguo.github.io/blog/–&gt;">https://lanjianguo.github.io/blog/–&gt;</a> 200 –&gt; 关闭博客的标签页 –&gt; 重新打开<a href="https://lanjianguo.github.io/blog/">https://lanjianguo.github.io/blog/</a> –&gt; 200(from disk cache) –&gt; 刷新 –&gt; 200(from memory cache)</p>
 <ul>
-<li>访问<a href="https://lanjianguo.github.io/blog/" target="_blank" rel="noopener">https://lanjianguo.github.io/blog/</a></li>
+<li>访问<a href="https://lanjianguo.github.io/blog/">https://lanjianguo.github.io/blog/</a></li>
 </ul>
 <p><img src="http://agroup-bos.cdn.bcebos.com/4c0e170c43d945eae0a7c24abf63c0ea4800e796" alt="图片"></p>
 <ul>
 <li>关闭博客的标签页 </li>
-<li>重新打开<a href="https://lanjianguo.github.io/blog/" target="_blank" rel="noopener">https://lanjianguo.github.io/blog/</a></li>
+<li>重新打开<a href="https://lanjianguo.github.io/blog/">https://lanjianguo.github.io/blog/</a></li>
 </ul>
 <p><img src="http://agroup-bos.cdn.bcebos.com/9863f61c84163bafa9f3e08bce3f0bddda617fc8" alt="图片"></p>
 <ul>
