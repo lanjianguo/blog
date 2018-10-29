@@ -88,7 +88,7 @@
 <meta property="og:description" content="在项目中经常会遇到URL转码解码的情况，但是一直对于encodeURI和encodeURIComponent两种编码方式没有太多了解。用的时候也稀里糊涂，今天就针对这两种编码方式来对比分析一下二者的区别。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://agroup-bos.cdn.bcebos.com/4c78175641bebee6198e2891cd5fae57dd390156">
-<meta property="og:updated_time" content="2018-10-29T09:39:25.025Z">
+<meta property="og:updated_time" content="2018-10-29T10:32:18.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈js中encodeURI和encodeURIComponent">
 <meta name="twitter:description" content="在项目中经常会遇到URL转码解码的情况，但是一直对于encodeURI和encodeURIComponent两种编码方式没有太多了解。用的时候也稀里糊涂，今天就针对这两种编码方式来对比分析一下二者的区别。">
@@ -377,7 +377,7 @@
 <h5 id="encodeURIComponent编码范围"><a href="#encodeURIComponent编码范围" class="headerlink" title="encodeURIComponent编码范围"></a>encodeURIComponent编码范围</h5><p>encodeURIComponent不编码字符有71个：!      ‘     (     )     *     -     .     _     ~     0-9     a-z     A-Z</p>
 <p>所以encodeURIComponent比encodeURI编码的范围更大。</p>
 <h4 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h4><p>虽然上面写了二者的编码范围的区别，但是还是不够直观，我们通过下面这里例子来看一下。</p>
-<p>如果你需要编码整个URL，然后需要使用这个URL，那么用encodeURI。</p>
+<p>将下面的URL分别用两种编码方式，编码后打印输出。</p>
 <pre><code>var url = &quot;https://lanjianguo.github.io/blog/2018/10/29/浅谈js中encodeURI和encodeURIComponent/&quot;
 console.log(encodeURI(url));
 console.log(encodeURIComponent(url));
