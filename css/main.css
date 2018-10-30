@@ -2585,6 +2585,11 @@ pre .javascript .function {
 .page-post-detail .comments {
   overflow: hidden;
 }
+
+.vheader{
+  display: none !important;
+}
+
 @media (max-width: 767px) {
   .header-inner,
   .container .main-inner,
