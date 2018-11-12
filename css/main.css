@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #367cc1;
+  background: #ffffc3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2641,11 +2641,6 @@ embed {
     vertical-align: top;
   }
 }
-
-.vheader{
-  
-}
-
 @media (max-width: 767px) {
   .menu .menu-item br {
     display: none;
