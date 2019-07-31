@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JavaScript对象是键/值对的集合。值可以包含属性和方法，并且可以包含所有其他 JavaScript 数据类型，例如字符串，数字和布尔值。JavaScript中的所有对象都来自Object的构造函数。Object提供了很多实用的内置方法，并且可以在单个对象中直接使用。本文将着重介绍Object的使用内置方法的使用。">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="那些javascript中对象的方法">
+<meta property="og:url" content="https://lanjianguo.github.io/blog/2019/07/31/那些javascript中对象的方法/index.html">
+<meta property="og:site_name" content="LanJianGuo">
+<meta property="og:description" content="JavaScript对象是键/值对的集合。值可以包含属性和方法，并且可以包含所有其他 JavaScript 数据类型，例如字符串，数字和布尔值。JavaScript中的所有对象都来自Object的构造函数。Object提供了很多实用的内置方法，并且可以在单个对象中直接使用。本文将着重介绍Object的使用内置方法的使用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-31T06:55:37.013Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="那些javascript中对象的方法">
+<meta name="twitter:description" content="JavaScript对象是键/值对的集合。值可以包含属性和方法，并且可以包含所有其他 JavaScript 数据类型，例如字符串，数字和布尔值。JavaScript中的所有对象都来自Object的构造函数。Object提供了很多实用的内置方法，并且可以在单个对象中直接使用。本文将着重介绍Object的使用内置方法的使用。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lanjianguo.github.io/blog/2019/07/31/那些javascript中对象的方法/"/>
+
+
+
+
+
+  <title>那些javascript中对象的方法 | LanJianGuo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/lanjianguo/blog"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LanJianGuo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lanjianguo.github.io/blog/blog/2019/07/31/那些javascript中对象的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LanJianGuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LanJianGuo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">那些javascript中对象的方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T14:09:22+08:00">
+                2019-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2019/07/31/那些javascript中对象的方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/07/31/那些javascript中对象的方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>JavaScript对象是键/值对的集合。<strong>值</strong>可以包含<strong>属性</strong>和<strong>方法</strong>，并且可以包含所有其他 JavaScript 数据类型，例如字符串，数字和布尔值。<br>JavaScript中的所有对象都来自Object的构造函数。<strong>Object</strong>提供了很多实用的内置方法，并且可以在单个对象中直接使用。<br>本文将着重介绍Object的使用内置方法的使用。</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>JavaScript对象是键/值对的集合。<strong>值</strong>可以包含<strong>属性</strong>和<strong>方法</strong>，并且可以包含所有其他 JavaScript 数据类型，例如字符串，数字和布尔值。<br>JavaScript中的所有对象都来自Object的构造函数。<strong>Object</strong>提供了很多实用的内置方法，并且可以在单个对象中直接使用。<br>本文将着重介绍Object的使用内置方法的使用。</p>
+<h4 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h4><p>Object.create()方法用于创建一个新对象，并将其链接到现有的对象原型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 初始化一个对象，包含属性和方法</span><br><span class="line">const job = &#123;</span><br><span class="line">    position: &apos;cashier&apos;,</span><br><span class="line">    type: &apos;hourly&apos;,</span><br><span class="line">    isAvailable: true,</span><br><span class="line">    showDetails() &#123;</span><br><span class="line">        const accepting = this.isAvailable ? &apos;is accepting applications&apos; : &quot;is not currently accepting applications&quot;;</span><br><span class="line"></span><br><span class="line">        console.log(`The $&#123;this.position&#125; position is $&#123;this.type&#125; and $&#123;accepting&#125;.`);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 使用Object.create来将其链接到新的对象上</span><br><span class="line">const barista = Object.create(job);</span><br><span class="line"></span><br><span class="line">barista.position = &quot;barista&quot;;</span><br><span class="line">barista.showDetails();</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line">The barista position is hourly and is accepting applications.</span><br></pre></td></tr></table></figure>
+<p><code>barista</code> 对象现在有一个 <code>position</code> 属性 - 但是所有其他属性和方法都可以通过 <code>job</code> 的原型获得。通过<code>Object.create()</code>来实现最小化重复。</p>
+<h4 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys()"></a>Object.keys()</h4><p>Object.keys()会创建一个包含对象键的数组。</p>
+<p>我们可以创建一个对象并打印键的数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 初始化一个对象</span><br><span class="line">const employees = &#123;</span><br><span class="line">    boss: &apos;Michael&apos;,</span><br><span class="line">    secretary: &apos;Pam&apos;,</span><br><span class="line">    sales: &apos;Jim&apos;,</span><br><span class="line">    accountant: &apos;Oscar&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 获取对象的键</span><br><span class="line">const keys = Object.keys(employees);</span><br><span class="line">console.log(keys);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line">[&quot;boss&quot;, &quot;secretary&quot;, &quot;sales&quot;, &quot;accountant&quot;]</span><br></pre></td></tr></table></figure>
+<p><code>Object.keys()</code> 还可结合forEach()遍历对象的键和值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 获取对象的键，遍历并获取对象的值</span><br><span class="line">Object.keys(employees).forEach(key =&gt; &#123;</span><br><span class="line">    let value = employees[key];</span><br><span class="line"></span><br><span class="line">     console.log(`$&#123;key&#125;: $&#123;value&#125;`);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">boss: Michael</span><br><span class="line">secretary: Pam</span><br><span class="line">sales: Jim</span><br><span class="line">accountant: Oscar</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>for-in</code> 循环和<code>Object.keys()</code>返回的可枚举属性有一个区别：<br><code>for-in</code> 循环同时也会遍历<strong>原型</strong>属性<br><code>Object.keys()</code> 只会返回<strong>自有（实例）</strong>属性</p>
+</blockquote>
+<p><code>Object.keys()</code> 对于检查对象的长度也很有用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 获取对象的键数组的长度</span><br><span class="line">const length = Object.keys(employees).length;</span><br><span class="line"></span><br><span class="line">console.log(length);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p>使用该 <code>length</code> 属性，我们能够获取对象自有属性的数量。</p>
+<h4 id="Object-values"><a href="#Object-values" class="headerlink" title="Object.values()"></a>Object.values()</h4><p>Object.values()创建一个包含对象值的数组，与Object.keys()一样，获取的都是对象自身的属性，不包含继承的父对象的属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 初始化一个对象</span><br><span class="line">const session = &#123;</span><br><span class="line">    id: 1,</span><br><span class="line">    time: `26-July-2018`,</span><br><span class="line">    device: &apos;mobile&apos;,</span><br><span class="line">    browser: &apos;Chrome&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 获取对象的所有值</span><br><span class="line">const values = Object.values(session);</span><br><span class="line"></span><br><span class="line">console.log(values);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">[1, &quot;26-July-2018&quot;, &quot;mobile&quot;, &quot;Chrome&quot;]</span><br></pre></td></tr></table></figure>
+<h4 id="Object-entries"><a href="#Object-entries" class="headerlink" title="Object.entries()"></a>Object.entries()</h4><p>Object.entries() 创建对象的<strong>键/值</strong>对的嵌套数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 初始化一个对象</span><br><span class="line">const operatingSystem = &#123;</span><br><span class="line">    name: &apos;Ubuntu&apos;,</span><br><span class="line">    version: 18.04,</span><br><span class="line">    license: &apos;Open Source&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 获取对象的键/值数组</span><br><span class="line">const entries = Object.entries(operatingSystem);</span><br><span class="line"></span><br><span class="line">console.log(entries);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">    [&quot;name&quot;, &quot;Ubuntu&quot;]</span><br><span class="line">    [&quot;version&quot;, 18.04]</span><br><span class="line">    [&quot;license&quot;, &quot;Open Source&quot;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>获取了<strong>键/值</strong>对数组，就可以使用该<code>forEach()</code>方法循环并处理结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 循环获取的键/值结果</span><br><span class="line">entries.forEach(entry =&gt; &#123;</span><br><span class="line">    const [key, value] = entry;</span><br><span class="line"></span><br><span class="line">    console.log(`$&#123;key&#125;: $&#123;value&#125;`);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">name: Ubuntu</span><br><span class="line">version: 18.04</span><br><span class="line">license: Open Source</span><br></pre></td></tr></table></figure>
+<p><code>Object.entries()</code> 方法仅返回对象实例自己的属性，而不返回可通过其原型继承的任何属性。</p>
+<h4 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h4><p>Object.assign()用于把一个对象的值复制到另一个对象。</p>
+<p>我们可以创建两个对象，使用<code>Object.assign()</code>方法将它们合并。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 初始化一个对象</span><br><span class="line">const name = &#123;</span><br><span class="line">    firstName: &apos;Philip&apos;,</span><br><span class="line">    lastName: &apos;Fry&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 初始化另一个对象</span><br><span class="line">const details = &#123;</span><br><span class="line">    job: &apos;Delivery Boy&apos;,</span><br><span class="line">    employer: &apos;Planet Express&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 合并对象</span><br><span class="line">const character = Object.assign(name, details);</span><br><span class="line"></span><br><span class="line">console.log(character);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">&#123;firstName: &quot;Philip&quot;, lastName: &quot;Fry&quot;, job: &quot;Delivery Boy&quot;, employer: &quot;Planet Express&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p>也可以使用展开语法来完成相同的任务。在下面的代码中，我们将通过展开语法合并<code>name</code>和<code>details</code>对象，来声明<code>character</code>对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 初始化一个对象</span><br><span class="line">const name = &#123;</span><br><span class="line">    firstName: &apos;Philip&apos;,</span><br><span class="line">    lastName: &apos;Fry&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 初始化另一个对象</span><br><span class="line">const details = &#123;</span><br><span class="line">    job: &apos;Delivery Boy&apos;,</span><br><span class="line">    employer: &apos;Planet Express&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 通过展开语法合并对象</span><br><span class="line">const character = &#123;...name, ...details&#125;</span><br><span class="line"></span><br><span class="line">console.log(character);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">&#123;firstName: &quot;Philip&quot;, lastName: &quot;Fry&quot;, job: &quot;Delivery Boy&quot;, employer: &quot;Planet Express&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p>展开语法在对象语法中也称为<strong>浅克隆</strong>。<br>需要注意的是如果对象属性有相同的名称，后面的对象属性，会覆盖前面的对象属性。</p>
+<h4 id="Object-freeze"><a href="#Object-freeze" class="headerlink" title="Object.freeze()"></a>Object.freeze()</h4><p>Object.freeze()防止修改对象的属性和值，并防止在对象中添加或删除属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 初始化一个对象</span><br><span class="line">const user = &#123;</span><br><span class="line">    username: &apos;AzureDiamond&apos;,</span><br><span class="line">    password: &apos;hunter2&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 防止对象属性与值被修改</span><br><span class="line">const newUser = Object.freeze(user);</span><br><span class="line"></span><br><span class="line">newUser.password = &apos;*******&apos;;</span><br><span class="line">newUser.active = true;</span><br><span class="line"></span><br><span class="line">console.log(newUser);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">&#123;username: &quot;AzureDiamond&quot;, password: &quot;hunter2&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，我们试图重写密码用<code>*******</code>覆盖<code>hunter2</code>，但<code>password</code>的值能保持不变。我们还尝试添加一个新属性<code>active</code>，但没有添加。</p>
+<p><code>Object.isFrozen()</code> 可用于确定对象是否已冻结，并返回布尔值。</p>
+<h4 id="Object-seal"><a href="#Object-seal" class="headerlink" title="Object.seal()"></a>Object.seal()</h4><p>Object.seal()阻止将新属性添加到对象，但允许修改现有属性。这种方法类似于<code>Object.freeze()</code>。在实现下面的代码之前刷新控制台以避免错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 初始化一个对象</span><br><span class="line">const user = &#123;</span><br><span class="line">    username: &apos;AzureDiamond&apos;,</span><br><span class="line">    password: &apos;hunter2&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 将对象密封</span><br><span class="line">const newUser = Object.seal(user);</span><br><span class="line"></span><br><span class="line">newUser.password = &apos;*******&apos;;</span><br><span class="line">newUser.active = true;</span><br><span class="line"></span><br><span class="line">console.log(newUser);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">&#123;username: &quot;AzureDiamond&quot;, password: &quot;*******&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p>新<code>active</code>属性未添加到密封对象，但<code>password</code>属性已成功更改。</p>
+<p><code>Object.isSealed()</code> 可用于确定对象是否已封闭，并返回布尔值。</p>
+<h4 id="Object-getPrototypeOf"><a href="#Object-getPrototypeOf" class="headerlink" title="Object.getPrototypeOf()"></a>Object.getPrototypeOf()</h4><p>Object.getPrototypeOf()用于获取<code>[[Prototype]]</code>对象的内部隐藏，也可通过 <code>__proto__</code> 属性访问。</p>
+<p>在这个例子中，我们可以创建一个可以访问<code>Array</code>原型的数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const employees = [&apos;Ron&apos;, &apos;April&apos;, &apos;Andy&apos;, &apos;Leslie&apos;];</span><br><span class="line"></span><br><span class="line">Object.getPrototypeOf(employees);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">[constructor: ƒ, concat: ƒ, find: ƒ, findIndex: ƒ, pop: ƒ, …]</span><br></pre></td></tr></table></figure>
+<p>我们可以在该原型输出中看到<code>employees</code>数组访问<code>pop</code>，<code>find</code>以及其他数组原型方法。我们可以通过测试<code>employees</code>原型来证实这一点<code>Array.prototype</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.getPrototypeOf(employees) === Array.prototype;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*输出结果*/</span><br><span class="line"></span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+<p>此方法可用于获取有关对象的更多信息或确保它可以访问另一个对象的原型。</p>
+<p>还有一种相关Object.setPrototypeOf()方法将一个原型添加到另一个对象。建议您使用<code>Object.create()</code>， 因为它更快，性能更高。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>对象有许多有用的方法非常实用，在项目中的有效使用，可以极大的提高开发效率。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/10/29/浅谈js中encodeURI和encodeURIComponent/" rel="next" title="浅谈js中encodeURI和encodeURIComponent">
+                <i class="fa fa-chevron-left"></i> 浅谈js中encodeURI和encodeURIComponent
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LanJianGuo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/blog/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://efe.baidu.com/" title="百度 EFE" target="_blank">百度 EFE</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://taobaofed.org/" title="淘宝 FED" target="_blank">淘宝 FED</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://isux.tencent.com/" title="腾讯 ISUX" target="_blank">腾讯 ISUX</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.75team.com/" title="奇舞团" target="_blank">奇舞团</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://aotu.io/" title="凹凸实验室" target="_blank">凹凸实验室</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LanJianGuo</span>
+
+  
+</div>
+<div class="powered-by" >
+
+
+  <span id="busuanzi_container_site_uv">
+    本站访客数 <i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span> | 
+  </span>
+
+  <span id="busuanzi_container_site_pv">
+    本站总访问量 <i class="fa fa-eye"></i>  <span id="busuanzi_value_site_pv"></span>
+  </span>
+
+</div>
+
+  <div class="powered-by"></div>
+
+
+
+  <span class="post-meta-divider"></span>
+
+
+
+  <div class="theme-info"></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: '526kzecX3jFAL1KjEPRhpP6Q-gzGzoHsz',
+        appKey: 'N1wp6bWEaySngOnMSuPpkVf7',
+        placeholder: '想对作者说点什么？',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
